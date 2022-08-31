@@ -1,0 +1,10 @@
+import requests as re
+
+url = dict(London="https://wttr.in/London?mMnTq&lang=ru",
+           SVO='https://wttr.in/svo?mMnTq&lang=ru',
+           Cherepovets='https://wttr.in/Cherepovets?mMnTq&lang=ru')
+
+for city in url:
+    response = re.get(url[city])
+    response.raise_for_status()
+    print(response.text)
